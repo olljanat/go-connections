@@ -11,10 +11,10 @@ jobs:
       - run:
           name: Get dependencies
           command: |
-            go get github.com/golang/lint/golint &&
-            go get github.com/pkg/errors &&
-            go get github.com/stretchr/testify &&
-            go get golang.org/x/net/proxy
+            go get -u github.com/golang/lint/golint &&
+            go get -u github.com/pkg/errors &&
+            go get -u github.com/stretchr/testify &&
+            go get -u golang.org/x/net/proxy
       - run:
           name: Run analysis before tests
           command: go vet ./...
@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Build for Windows
           command: |
-            go get github.com/Microsoft/go-winio &&
+            go get -u github.com/Microsoft/go-winio &&
             go build ./...
           environment:
             GOOS: windows
