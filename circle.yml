@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Build for Windows
           command: |
-            sudo env PATH=$PATH go get github.com/Microsoft/go-winio &&
+            go get -d github.com/Microsoft/go-winio &&
             go build ./...
           environment:
             GOOS: windows
