@@ -31,10 +31,11 @@ jobs:
           command: go build ./...
           environment:
             GOOS: linux
+      - run: which go && echo $GOPATH && echo $GOROOT
       - run:
           name: Build for Windows
           command: |
-            sudo /usr/local/go/bin/go install runtime/internal/sys &&
+            sudo go install runtime/internal/sys &&
             go get github.com/Microsoft/go-winio &&
             go build ./...
           environment:
