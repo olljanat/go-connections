@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Build for Windows
           command: |
-            sudo go install runtime/internal/sys &&
+            sudo env PATH=$PATH go install runtime/internal/sys &&
             go get github.com/Microsoft/go-winio &&
             go build ./...
           environment:
