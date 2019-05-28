@@ -17,7 +17,8 @@ func GetProxyEnv(key string) string {
 	return proxyValue
 }
 
-// Deprecated: Proxies can now be configured using only http.Transport.Proxy
+// DialerFromEnvironment is deprecated
+// Proxies can now be configured using only http.Transport.Proxy
 // without configuring http.Transport.Dial.
 func DialerFromEnvironment(direct *net.Dialer) (*net.Dialer, error) {
 	return direct, nil
